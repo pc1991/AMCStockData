@@ -9,3 +9,5 @@ AMC Entertainment Holdings, Inc. (d/b/a AMC Theatres, originally an abbreviation
 # Information about this dataset
 
 This dataset provides historical data of AMC Entertainment Holdings, Inc. (AMC). The data is available at a daily level. Currency is USD.
+
+
