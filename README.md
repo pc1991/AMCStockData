@@ -31,8 +31,6 @@ Volume - Number of units traded in a day.
 
 Now, in order to figure out which model works well for this dataset, a validation dataset is generated with 80% of the rows in the original dataset to use for training, with the remaining 20% of the data to be validated. The following graphs monitor the behavior of this training dataset.
 
-
-
 Validation Boxplots:
 
 ![AMC Stock Open Boxplot](https://user-images.githubusercontent.com/87962854/141599591-3e9b3e68-74cc-404f-bb8b-1cca39ff9593.png)
@@ -46,8 +44,6 @@ Validation Boxplots:
 ![AMC Stock Adj Close Boxplot](https://user-images.githubusercontent.com/87962854/141599632-9098fad2-7fb6-4219-a0cc-e0501ce2dbf5.png)
 
 ![AMC Stock Volume Boxplot](https://user-images.githubusercontent.com/87962854/141599642-c169d687-b8a3-4dfe-88fa-261464c9dd43.png)
-
-
 
 Validation Histograms:
 
@@ -63,5 +59,16 @@ Validation Histograms:
 
 ![AMC Stock Volume Histogram](https://user-images.githubusercontent.com/87962854/141599779-e8a2ed0a-7795-4ba6-a6bf-0a0b0734542f.png)
 
+Validation Density Plots:
 
+![AMC Stock Open Density Plot](https://user-images.githubusercontent.com/87962854/141600173-178d179e-e458-418a-a0ac-75bc5bc42d67.png)
 
+![AMC Stock High Density Plot](https://user-images.githubusercontent.com/87962854/141600184-2f4d78ed-360c-4614-a82d-0162c0ba1216.png)
+
+![AMC Stock Low Density Plot](https://user-images.githubusercontent.com/87962854/141600192-b7a3696d-a349-423d-be73-e3b3dc2e2d4f.png)
+
+![AMC Stock Close Density Plot](https://user-images.githubusercontent.com/87962854/141600199-543566d2-1652-499d-8680-59795f7a9731.png)
+
+![AMC Stock Adj Close Density Plot](https://user-images.githubusercontent.com/87962854/141600206-380eac98-96df-442c-93d5-0c20d6074517.png)
+
+![AMC Stock Volume Density Plot](https://user-images.githubusercontent.com/87962854/141600213-aba15111-5181-466c-b5cd-7e4909ae4a86.png)
