@@ -147,7 +147,7 @@ The algorithms in this first outcome are currently centered and scaled with the 
 
 # Second Dotplot Outcome Comparing AMC Stock Algorithms:
 
-The algorithms in this first outcome are currently centered and scaled without the highly correlated values.
+The algorithms in this second outcome are currently centered and scaled without the highly correlated values.
 
 > outcome2 <- resamples(list(LM = fit.lm, GLM = fit.glm, GLMNET = fit.glmnet, SVM = fit.svm, KNN = fit.knn))
 > 
@@ -205,4 +205,62 @@ The algorithms in this first outcome are currently centered and scaled without t
 > KNN    7.462957e-03 0.0339076231 0.121907488 0.14276862 0.21591304 0.51108661    0
 
 ![Second Dotplot Outcome Comparing AMC Stock Algorithms](https://user-images.githubusercontent.com/87962854/141603286-f7f2ead0-7074-4b2f-a664-481c7cc33864.png)
+
+# Third Outcome Comparing AMC Stock Algorithms:
+
+The algorithms in this third outcome are currently centered, scaled, and transformed using the Box-Cox method with the highly correlated values.
+
+> outcome3 <- resamples(list(LM = fit.lm, GLM = fit.glm, GLMNET = fit.glmnet, SVM = fit.svm, KNN = fit.knn))
+> 
+> summary(outcome3)
+>
+> Call:
+> 
+> summary.resamples(object = outcome3)
+>
+> Models: LM, GLM, GLMNET, SVM, KNN 
+> 
+> Number of resamples: 30 
+>
+> MAE 
+> 
+>            Min.  1st Qu.   Median     Mean  3rd Qu.     Max. NA's
+>            
+> LM     14317954 19166740 20684487 20684035 22974526 26701879    0
+> 
+> GLM    14317954 19166740 20684487 20684035 22974526 26701879    0
+> 
+> GLMNET 15919979 18634403 20616042 20416441 22130482 24761106    0
+> 
+> SVM     5680386  8945198 10876737 11650119 14548465 18924878    0
+> 
+> KNN     4032008  7916614  9216504  9910743 12324078 17621998    0
+>
+> RMSE 
+> 
+>            Min.  1st Qu.   Median     Mean  3rd Qu.      Max. NA's
+>            
+> LM     20952996 29348149 36896169 42420653 49173955  94586011    0
+> 
+> GLM    20952996 29348149 36896169 42420653 49173955  94586011    0
+> 
+> GLMNET 20668753 29614356 36502576 41740995 48523019  87240671    0
+> 
+> SVM     7826026 26266721 39953805 44807230 60338621 102646673    0
+> 
+> KNN    13423914 28075877 39029866 45705324 59636949 104705672    0
+>
+> Rsquared 
+> 
+>              Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA's
+>              
+> LM     0.20995793 0.4161312 0.5313362 0.5180253 0.6168191 0.8587488    0
+> 
+> GLM    0.20995793 0.4161312 0.5313362 0.5180253 0.6168191 0.8587488    0
+> 
+> GLMNET 0.21172570 0.4511238 0.5180361 0.5098385 0.5880617 0.7885906    0
+> 
+> SVM    0.29198507 0.4809362 0.5704306 0.5699200 0.7150422 0.8766482    0
+> 
+> KNN    0.02963859 0.3563041 0.5478481 0.4798609 0.6387612 0.8239043    0
 
