@@ -72,3 +72,11 @@ Validation Density Plots:
 ![AMC Stock Adj Close Density Plot](https://user-images.githubusercontent.com/87962854/141600206-380eac98-96df-442c-93d5-0c20d6074517.png)
 
 ![AMC Stock Volume Density Plot](https://user-images.githubusercontent.com/87962854/141600213-aba15111-5181-466c-b5cd-7e4909ae4a86.png)
+
+Scatter Plot:
+
+![AMC Stock Scatter Plot](https://user-images.githubusercontent.com/87962854/141600390-2bb17c6f-239c-4c8c-9f5a-83a53488ce91.png)
+
+Correlation Plot:
+
+![AMC Stock Correlation Plot](https://user-images.githubusercontent.com/87962854/141600413-9ff9da4a-d636-4f9f-a740-0e9066529dbd.png)
