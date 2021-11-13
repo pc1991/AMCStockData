@@ -278,7 +278,7 @@ Three additional ensemble outcomes are added to improve the analysis of analyzin
 > 
 > summary.resamples(object = ensemble)
 >
-> Models: RF, GBM, CUBIST 
+> Models: RF (Random Forest), GBM (Gradient Booster Method), CUBIST 
 > 
 > Number of resamples: 30 
 > 
