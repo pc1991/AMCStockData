@@ -31,7 +31,7 @@ Volume - Number of units traded in a day.
 
 Now, in order to figure out which model works well for this dataset, a validation dataset is generated with 80% of the rows in the original dataset to use for training, with the remaining 20% of the data to be validated. The following graphs monitor the behavior of this training dataset.
 
-Validation Boxplots:
+# Validation Boxplots:
 
 ![AMC Stock Open Boxplot](https://user-images.githubusercontent.com/87962854/141599591-3e9b3e68-74cc-404f-bb8b-1cca39ff9593.png)
 
@@ -45,7 +45,7 @@ Validation Boxplots:
 
 ![AMC Stock Volume Boxplot](https://user-images.githubusercontent.com/87962854/141599642-c169d687-b8a3-4dfe-88fa-261464c9dd43.png)
 
-Validation Histograms:
+# Validation Histograms:
 
 ![AMC Stock Open Histogram](https://user-images.githubusercontent.com/87962854/141599735-d69845f6-803c-4e2e-b6e1-e4851fe90e57.png)
 
@@ -59,7 +59,7 @@ Validation Histograms:
 
 ![AMC Stock Volume Histogram](https://user-images.githubusercontent.com/87962854/141599779-e8a2ed0a-7795-4ba6-a6bf-0a0b0734542f.png)
 
-Validation Density Plots:
+# Validation Density Plots:
 
 ![AMC Stock Open Density Plot](https://user-images.githubusercontent.com/87962854/141600173-178d179e-e458-418a-a0ac-75bc5bc42d67.png)
 
@@ -73,11 +73,11 @@ Validation Density Plots:
 
 ![AMC Stock Volume Density Plot](https://user-images.githubusercontent.com/87962854/141600213-aba15111-5181-466c-b5cd-7e4909ae4a86.png)
 
-Scatter Plot:
+# Scatter Plot:
 
 ![AMC Stock Scatter Plot](https://user-images.githubusercontent.com/87962854/141600390-2bb17c6f-239c-4c8c-9f5a-83a53488ce91.png)
 
-Correlation Plot:
+# Correlation Plot:
 
 ![AMC Stock Correlation Plot](https://user-images.githubusercontent.com/87962854/141600413-9ff9da4a-d636-4f9f-a740-0e9066529dbd.png)
 
@@ -85,22 +85,22 @@ Correlation Plot:
 
 In order to figure out which model to use to best predict where the data will trend, we would have to develop a test-harness using 10-fold cross validation with three repeats using various algorithms using various units of measure. The dot-plots showing the performances of each algorithm will be shown below.
 
-First Outcome Comparing AMC Stock Algorithms:
+# First Outcome Comparing AMC Stock Algorithms:
 
 The algorithms in this first outcome are currently centered and scaled with the highly correlated values.
 
 > outcome <- resamples(list(LM = fit.lm, GLM = fit.glm, GLMNET = fit.glmnet, SVM = fit.svm, KNN = fit.knn))
 > 
 > summary(outcome)
-
+>
 > Call:
 > 
 > summary.resamples(object = outcome)
-
+>
 > Models: LM, GLM, GLMNET, SVM, KNN 
 > 
 > Number of resamples: 30 
-
+>
 > MAE 
 > 
 >            Min.  1st Qu.   Median     Mean  3rd Qu.     Max. NA's
@@ -114,7 +114,7 @@ The algorithms in this first outcome are currently centered and scaled with the 
 > SVM     5469373  9163424 11043345 11686925 14508471 18779865    0
 > 
 > KNN     3680526  7838716  9201742  9888181 12449735 18141919    0
-
+>
 > RMSE 
 > 
 >            Min.  1st Qu.   Median     Mean  3rd Qu.      Max. NA's
@@ -128,7 +128,7 @@ The algorithms in this first outcome are currently centered and scaled with the 
 > SVM     7514733 26758981 40627907 44926372 60926524 101696784    0
 > 
 > KNN    11264514 27632479 39947197 45696253 59777525 106387510    0
-
+>
 > Rsquared 
 > 
 >              Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA's
@@ -145,5 +145,45 @@ The algorithms in this first outcome are currently centered and scaled with the 
 
 ![First Dotplot Outcome Comparing AMC Stock Algorithms](https://user-images.githubusercontent.com/87962854/141601114-e506d18d-1aaa-40b1-aedb-c42d622830e8.png)
 
-Second Dotplot Outcome Comparing AMC Stock Algorithms:
+# Second Dotplot Outcome Comparing AMC Stock Algorithms:
+
+The algorithms in this first outcome are currently centered and scaled without the highly correlated values.
+
+> outcome2 <- resamples(list(LM = fit.lm, GLM = fit.glm, GLMNET = fit.glmnet, SVM = fit.svm, KNN = fit.knn))
+> 
+> summary(outcome2)
+>
+> Call:
+> 
+> summary.resamples(object = outcome2)
+>
+> Models: LM, GLM, GLMNET, SVM, KNN 
+>
+> Number of resamples: 30 
+>
+> MAE 
+>            Min.  1st Qu.   Median     Mean  3rd Qu.     Max. NA's
+> LM     17120963 21566122 23612492 24000348 26919221 30935049    0
+> GLM    17120963 21566122 23612492 24000348 26919221 30935049    0
+> GLMNET 12525068 14823381 16795523 16891746 18838886 21194430    0
+> SVM     7473668 13559723 15741403 16038858 18803797 23202159    0
+> KNN    11324251 16083905 17852422 18445773 21068954 24700748    0
+>
+> RMSE 
+>            Min.  1st Qu.   Median     Mean  3rd Qu.      Max. NA's
+> LM     22152423 40720829 53675120 57491085 72138560 112722853    0
+> GLM    22152423 40720829 53675120 57491085 72138560 112722853    0
+> GLMNET 15277092 26185167 37147190 41555763 52632754  90660491    0
+> SVM    11644364 35641578 48940324 53708943 69864280 111750830    0
+> KNN    22902736 38815155 48411236 56359413 72153949 111490350    0
+>
+> Rsquared 
+>                Min.      1st Qu.      Median       Mean    3rd Qu.       Max. NA's
+> LM     1.483748e-05 0.0009268357 0.006890912 0.01918216 0.03102276 0.08289168    0
+> GLM    1.483748e-05 0.0009268357 0.006890912 0.01918216 0.03102276 0.08289168    0
+> GLMNET 3.138369e-01 0.4896796108 0.538184948 0.55497133 0.63096929 0.85711975    0
+> SVM    6.511007e-03 0.0458225992 0.142131962 0.20097528 0.30306220 0.71290539    0
+> KNN    7.462957e-03 0.0339076231 0.121907488 0.14276862 0.21591304 0.51108661    0
+
+![Second Dotplot Outcome Comparing AMC Stock Algorithms](https://user-images.githubusercontent.com/87962854/141603286-f7f2ead0-7074-4b2f-a664-481c7cc33864.png)
 
