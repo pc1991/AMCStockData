@@ -268,3 +268,48 @@ The algorithms in this third outcome are currently centered, scaled, and transfo
 
 # Ensemble Outcomes Comparing AMC Stock Algorithms
 
+Three additional ensemble outcomes are added to improve the analysis of analyzing the data, all of which are transformed via the Box-Cox method.
+
+> ensemble <- resamples(list(RF = fit.rf, GBM = fit.gbm, CUBIST = fit.cubist))
+> 
+> summary(ensemble)
+>
+> Call:
+> 
+> summary.resamples(object = ensemble)
+>
+> Models: RF, GBM, CUBIST 
+> 
+> Number of resamples: 30 
+> 
+> MAE 
+> 
+>            Min.  1st Qu.   Median     Mean  3rd Qu.     Max. NA's
+>            
+> RF      5665450  7472449  8695215  9341970 11044333 14681649    0
+> 
+> GBM    10711818 13155020 14458774 14632866 16536161 18984534    0
+> 
+> CUBIST  3757394  5768194  7417536  7440709  8955991 12277018    0
+>
+> RMSE 
+> 
+>            Min.  1st Qu.   Median     Mean  3rd Qu.     Max. NA's
+>            
+> RF     16168780 22975529 32974827 38079897 48155583 70467545    0
+> 
+> GBM    20919656 27326500 36363300 42106731 52561442 88884199    0
+> 
+> CUBIST 10527833 17260591 24987716 31072433 41017138 67678798    0
+>
+> Rsquared 
+> 
+>             Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA's
+>             
+> RF     0.1021230 0.5789694 0.6794716 0.6267992 0.7462763 0.8697522    0
+> 
+> GBM    0.1110092 0.4715421 0.5421579 0.5268957 0.6505939 0.7527193    0
+> 
+> CUBIST 0.1621931 0.6962783 0.7533742 0.7322539 0.8724464 0.9536887    0 
+
+![Ensemble Dotplot Outcomes Comparing AMC Stock Algorithms](https://user-images.githubusercontent.com/87962854/141604946-4f7d0c39-17c9-49b7-89ea-eca24e555c42.png)
