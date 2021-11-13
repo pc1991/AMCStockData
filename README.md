@@ -97,7 +97,7 @@ The algorithms in this first outcome are currently centered and scaled with the 
 > 
 > summary.resamples(object = outcome)
 >
-> Models: LM, GLM, GLMNET, SVM, KNN 
+> Models: LM (Linear Model), GLM (Generalized Linear Model), GLMNET (Penalized Linear Model), SVM (Support Vector Machines), KNN (k-Nearest Neighbors)
 > 
 > Number of resamples: 30 
 >
