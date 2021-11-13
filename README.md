@@ -316,6 +316,52 @@ Three additional ensemble outcomes are added to improve the analysis of analyzin
 
 # Picking The Most Efficient Model
 
+The aim for picking the most efficient model is to find the model with the lowest root mean square error (RMSE). There's also a mean absolute error (MAE) & an r-squared error. However, our main concern is the RMSE. Overall, given the data that is shown above, it is proven that the Cubist model would be the best model to run the data.
+
+> #Cubist Wins#
+>
+> #Look deeper into winning model#
+> 
+> print(fit.cubist)
+>
+> Cubist 
+>
+> 1570 samples
+> 
+>    5 predictors
+.
+> Pre-processing: Box-Cox transformation (5) 
+> 
+> Resampling: Cross-Validated (10 fold, repeated 3 times) 
+> 
+> Summary of sample sizes: 1413, 1414, 1413, 1414, 1412, 1412, ... 
+> 
+> Resampling results across tuning parameters:
+>
+>   committees  neighbors  RMSE      Rsquared   MAE   
+>     
+>    1          0          45728962  0.4990559  10291250
+>    
+>    1          5          44921116  0.5135953  10035744
+>    
+>    1          9          45045970  0.5123765  10115521
+>    
+>   10          0          35877489  0.6351564   8310675
+>   
+>   10          5          35542554  0.6366793   8500939
+>   
+>   10          9          35559963  0.6389609   8574697
+>   
+>   20          0          35253899  0.6521506   8158116
+>   
+>   20          5          34942691  0.6501143   8382772
+>   
+>   20          9          34929826  0.6531267   8448448
+>
+> RMSE was used to select the optimal model using the smallest value.
+> 
+> The final values used for the model were committees = 20 and neighbors = 9.
+> 
 > #Train the Final Model#
 > 
 > library(Cubist)
@@ -336,7 +382,7 @@ Three additional ensemble outcomes are added to improve the analysis of analyzin
 > 
 > tXr <- amc$Volume[tX]
 > 
-> fM <- cubist(x = tXp, y = tXr, commitees = 20, neighbors = 0)
+> fM <- cubist(x = tXp, y = tXr, commitees = 20, neighbors = 9)
 > 
 > fM
 > 
@@ -351,6 +397,6 @@ Three additional ensemble outcomes are added to improve the analysis of analyzin
 > 
 > r2 <- cor(predictions, tXr)^2
 > 
-> print(rmse) #15074650#
+> print(rmse) #17255498#
 > 
-> print(r2) #0.9479295#
+> print(r2) #0.903859#
