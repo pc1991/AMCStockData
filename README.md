@@ -26,3 +26,8 @@ Close - Price from the last transaction of a trading day
 Adj Close - Closing price adjusted to reflect the value after accounting for any corporate actions
 
 Volume - Number of units traded in a day.
+
+# Setting Up The Validation Dataset
+
+Now, in order to figure out which model works well for this dataset, a validation dataset is generated with 80% of the rows in the original dataset to use for training, with the remaining 20% of the data to be validated. The following graphs monitor the behavior of this training dataset.
+
