@@ -313,3 +313,26 @@ Three additional ensemble outcomes are added to improve the analysis of analyzin
 > CUBIST 0.1621931 0.6962783 0.7533742 0.7322539 0.8724464 0.9536887    0 
 
 ![Ensemble Dotplot Outcomes Comparing AMC Stock Algorithms](https://user-images.githubusercontent.com/87962854/141604946-4f7d0c39-17c9-49b7-89ea-eca24e555c42.png)
+
+
+
+#Train the Final Model#
+library(Cubist)
+set.seed(7)
+x <- amc[,1:5]
+y <- amc[,6]
+preprocessParams <- preProcess(x)
+tX <- sample(1:nrow(amc), floor(.8*nrow(amc)))
+p <- c("Open", "High", "Low", "Close", "Adj Close")
+tXp <- amc[tX, p]
+tXr <- amc$Volume[tX]
+fM <- cubist(x = tXp, y = tXr, commitees = 20, neighbors = 0)
+fM
+summary(fM)
+predictions <- predict(fM, tXp)
+
+#Compute the RMSE & R^2#
+rmse <- sqrt(mean((predictions - tXr)^2))
+r2 <- cor(predictions, tXr)^2
+print(rmse) #15074650#
+print(r2) #0.9479295#
