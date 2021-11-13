@@ -400,3 +400,8 @@ The aim for picking the most efficient model is to find the model with the lowes
 > print(rmse) #17255498# - RMSE Value
 > 
 > print(r2) #0.903859# - R2 Value
+
+# Conclusion
+
+In closing, this model above will most likely work for this type of regressive dataset. But, please also take note that those values fluctuate every day. Therefore, you still want to make sure to compare each and every algorithms to find the best possible model to generate a prediction of when the next price and volume will be.
+
