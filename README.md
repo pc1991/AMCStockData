@@ -87,6 +87,8 @@ In order to figure out which model to use to best predict where the data will tr
 
 First Outcome Comparing AMC Stock Algorithms:
 
+The algorithms in this first outcome are currently centered and scaled with the highly correlated values.
+
 > outcome <- resamples(list(LM = fit.lm, GLM = fit.glm, GLMNET = fit.glmnet, SVM = fit.svm, KNN = fit.knn))
 > 
 > summary(outcome)
@@ -142,3 +144,6 @@ First Outcome Comparing AMC Stock Algorithms:
 > KNN    0.03048308 0.3402185 0.5595156 0.4853565 0.6163114 0.8478114    0
 
 ![First Dotplot Outcome Comparing AMC Stock Algorithms](https://user-images.githubusercontent.com/87962854/141601114-e506d18d-1aaa-40b1-aedb-c42d622830e8.png)
+
+Second Dotplot Outcome Comparing AMC Stock Algorithms:
+
