@@ -397,6 +397,6 @@ The aim for picking the most efficient model is to find the model with the lowes
 > 
 > r2 <- cor(predictions, tXr)^2
 > 
-> print(rmse) #17255498#
+> print(rmse) #17255498# - RMSE Value
 > 
-> print(r2) #0.903859#
+> print(r2) #0.903859# - R2 Value
