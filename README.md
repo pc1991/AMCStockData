@@ -31,6 +31,8 @@ Volume - Number of units traded in a day.
 
 Now, in order to figure out which model works well for this dataset, a validation dataset is generated with 80% of the rows in the original dataset to use for training, with the remaining 20% of the data to be validated. The following graphs monitor the behavior of this training dataset.
 
+
+
 Validation Boxplots:
 
 ![AMC Stock Open Boxplot](https://user-images.githubusercontent.com/87962854/141599591-3e9b3e68-74cc-404f-bb8b-1cca39ff9593.png)
@@ -44,3 +46,22 @@ Validation Boxplots:
 ![AMC Stock Adj Close Boxplot](https://user-images.githubusercontent.com/87962854/141599632-9098fad2-7fb6-4219-a0cc-e0501ce2dbf5.png)
 
 ![AMC Stock Volume Boxplot](https://user-images.githubusercontent.com/87962854/141599642-c169d687-b8a3-4dfe-88fa-261464c9dd43.png)
+
+
+
+Validation Histograms:
+
+![AMC Stock Open Histogram](https://user-images.githubusercontent.com/87962854/141599735-d69845f6-803c-4e2e-b6e1-e4851fe90e57.png)
+
+![AMC Stock High Histogram](https://user-images.githubusercontent.com/87962854/141599744-c60a2e3b-d1f5-4f45-813a-a56ac6d5e05f.png)
+
+![AMC Stock Low Histogram](https://user-images.githubusercontent.com/87962854/141599752-41c4c725-abc6-48bf-b48c-a2726eeaf10e.png)
+
+![AMC Stock Close Histogram](https://user-images.githubusercontent.com/87962854/141599762-6729f7ac-a788-43d6-a250-380207b96b8e.png)
+
+![AMC Stock Adj Close Histogram](https://user-images.githubusercontent.com/87962854/141599771-b4dee698-92f0-49b8-8865-4a4ebd25ba72.png)
+
+![AMC Stock Volume Histogram](https://user-images.githubusercontent.com/87962854/141599779-e8a2ed0a-7795-4ba6-a6bf-0a0b0734542f.png)
+
+
+
