@@ -10,4 +10,10 @@ AMC Entertainment Holdings, Inc. (d/b/a AMC Theatres, originally an abbreviation
 
 This dataset provides historical data of AMC Entertainment Holdings, Inc. (AMC). The data is available at a daily level. Currency is USD.
 
-
+Date - Actual Date
+Open - Price from the first transaction of a trading day
+High - Maximum price in a trading day
+Low - Minimum price in a trading day
+Close - Price from the last transaction of a trading day
+Adj Close - Closing price adjusted to reflect the value after accounting for any corporate actions
+Volume - Number of units traded in a day.
