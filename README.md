@@ -83,3 +83,41 @@ Correlation Plot:
 
 # Finding The Best Model To Run The Data
 
+In order to figure out which model to use to best predict where the data will trend, we would have to develop a test-harness using 10-fold cross validation with three repeats using various algorithms using various units of measure. The dot-plots showing the performances of each algorithm will be shown below.
+
+First Outcome Comparing AMC Stock Algorithms:
+
+> outcome <- resamples(list(LM = fit.lm, GLM = fit.glm, GLMNET = fit.glmnet, SVM = fit.svm, KNN = fit.knn))
+> summary(outcome)
+
+> Call:
+> summary.resamples(object = outcome)
+
+> Models: LM, GLM, GLMNET, SVM, KNN 
+> Number of resamples: 30 
+
+> MAE 
+>            Min.  1st Qu.   Median     Mean  3rd Qu.     Max. NA's
+> LM     12953051 15748600 18889597 18867085 20288098 28714143    0
+> GLM    12953051 15748600 18889597 18867085 20288098 28714143    0
+> GLMNET 12525068 14823381 16795523 16891746 18838886 21194430    0
+> SVM     5469373  9163424 11043345 11686925 14508471 18779865    0
+> KNN     3680526  7838716  9201742  9888181 12449735 18141919    0
+
+> RMSE 
+>            Min.  1st Qu.   Median     Mean  3rd Qu.      Max. NA's
+> LM     18448670 28932707 39036872 45528957 54000982  90905224    0
+> GLM    18448670 28932707 39036872 45528957 54000982  90905224    0
+> GLMNET 15277092 26185167 37147190 41555763 52632754  90660491    0
+> SVM     7514733 26758981 40627907 44926372 60926524 101696784    0
+> KNN    11264514 27632479 39947197 45696253 59777525 106387510    0
+
+> Rsquared 
+>              Min.   1st Qu.    Median      Mean   3rd Qu.      Max. NA's
+> LM     0.30432783 0.4632728 0.5191817 0.5231661 0.5945303 0.7912763    0
+> GLM    0.30432783 0.4632728 0.5191817 0.5231661 0.5945303 0.7912763    0
+> GLMNET 0.31383694 0.4896796 0.5381849 0.5549713 0.6309693 0.8571197    0
+> SVM    0.32678897 0.4956748 0.5800586 0.5776315 0.7037011 0.8830470    0
+> KNN    0.03048308 0.3402185 0.5595156 0.4853565 0.6163114 0.8478114    0
+
+![image](https://user-images.githubusercontent.com/87962854/141601003-74475134-2e49-4a35-b382-31b21d8ad270.png)
