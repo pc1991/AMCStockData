@@ -80,3 +80,6 @@ Scatter Plot:
 Correlation Plot:
 
 ![AMC Stock Correlation Plot](https://user-images.githubusercontent.com/87962854/141600413-9ff9da4a-d636-4f9f-a740-0e9066529dbd.png)
+
+# Finding The Best Model To Run The Data
+
